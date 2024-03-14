@@ -43,3 +43,20 @@ button {
 .checked {
   background-color: green;
 }
+
+.player-board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  margin: 20px;
+}
+
+h4 {
+  background-color: black;
+  text-align: center;
+  color: white;
+  margin: 5px;
+  font-size: 1.2em;
+  padding: 5px;
+}

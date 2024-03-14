@@ -42,4 +42,22 @@ const generateRandNum = () => {
   colorCellNum(randNum);
 };
 
+const generateUserBoards = () => {
+  const userBoards = document.getElementById("players-boards");
+  const userCards = parseInt(document.getElementById("cards-numbers").value);
+  userBoards.innerHTML = " ";
+  for (let i = 0; i < userCards; i++) {
+    const playerBoard = document.createElement("div");
+    playerBoard.className = "player-board";
+    playerBoard.innerHTML = "<h4> Cartella giocatore " + (i + 1) + "</h4>";
+    for (let j = 0; j < 24; j++) {
+      const num = getUniqueNum();
+      const numberCell = document.createElement("span");
+      numberCell.innerText = num;
+      numberCell.className = "cell";
+      playerBoard.appendChild(numberCell);
+    }
+    userBoards.appendChild(playerBoard);
+  }
+};
 generateBoard();
