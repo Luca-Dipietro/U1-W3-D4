@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#main-board {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 935px;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+button {
+  width: 5%;
+  margin-top: 20px;
+  padding: 5px;
+  background-color: orange;
+  border: none;
+  text-transform: uppercase;
+}
+
+.checked {
+  background-color: green;
+}
