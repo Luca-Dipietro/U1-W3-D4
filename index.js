@@ -16,18 +16,30 @@ const getRandNum = () => {
 
 const getUniqueNum = () => {
   const randomNum = getRandNum();
-  if (numCheck.incluedes(randomNum)) {
+  if (numCheck.includes(randomNum)) {
     return getUniqueNum();
   } else {
     return randomNum;
   }
 };
 
-const generateRandNum = () => {};
+const colorCellNum = (num) => {
+  const numCell = document.querySelectorAll("#main-board .cell");
+  numCell[num - 1].style.backgroundColor = "lightgreen";
+};
+
+const generateRandNum = () => {
+  if (numCheck.length >= 90) {
+    alert("Sono stati estratti tutti i numeri");
+    return;
+  }
+  const randNum = getUniqueNum();
+  numCheck.push(randNum);
+
+  const randNumChecked = document.getElementById("rand-num");
+  randNumChecked.innerText = "Numero estratto: " + randNum;
+
+  colorCellNum(randNum);
+};
 
 generateBoard();
-
-const randBtn = document.getElementById("randBtn");
-randBtn.addEventListener("click", () => {
-  generateRandNum();
-});
